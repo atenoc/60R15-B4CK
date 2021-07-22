@@ -17,15 +17,20 @@ export async function createOrden(req:Request, res:Response): Promise<Response> 
 
     const totalOrdenes = await (await Orden.find()).length;
     //console.log("Total Ordenes: "+totalOrdenes) 
-
+    let fecha1 = new Date();
+    
     console.log("Guardando orden...")
-    const { noMesa, nombreCliente, detalleOrden } = req.body;
+    const { noMesa, nombreCliente, en_cocina, en_barra, detalleOrden } = req.body;
 
     const nuevaOrden = {  
         noOrden: totalOrdenes + 1,
         noMesa: noMesa,
         nombreCliente: nombreCliente,
         estatus: "ORDENADO",
+        creado_por:"CLIENTE",
+        en_cocina: en_cocina,
+        en_barra: en_barra,
+        fecha:fecha1,
         detalleOrden: detalleOrden
     }
 
@@ -55,13 +60,13 @@ export async function deleteOrden(req:Request, res:Response): Promise<Response> 
 
 export async function updateOrden(req:Request, res:Response): Promise<Response> {
     const { id } = req.params;
-    const { estatus, detalleOrden }= req.body;
+    const { estatus, en_cocina, en_barra }= req.body;
 
     console.log("Obteniendo 1 orden con id: "+ id);
     console.log("orden: " + req.body);
 
     const orden = await Orden.findByIdAndUpdate(id, {
-        estatus, detalleOrden
+        estatus, en_cocina, en_barra //,detalleOrden
     }, {new: true});
 
     return res.json({

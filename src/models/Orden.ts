@@ -7,6 +7,10 @@ const schema = new Schema({
     nombreCliente: String,
     totalOrden: Number,
     estatus: String,
+    creado_por:String,
+    en_cocina:String,
+    en_barra:String,
+    fecha:Date,
     detalleOrden: Array<DetalleOrden>()
 })
 
@@ -16,6 +20,10 @@ interface IOrden extends Document{
     nombreCliente: string,
     totalOrden: number,
     estatus: string,
+    creado_por:string,
+    en_cocina:string,
+    en_barra:string,
+    fecha:Date,
     detalleOrden: Array<DetalleOrden>
 }
 
