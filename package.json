@@ -4,10 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "start": "npm run build && node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    //-------RESPALDO ORIGINAL------
+    //"dev": "nodemon src/index.ts",
+    //"start": "npm run build && node dist/index.js", //comando para produccion
+    //"build": "tsc",
+    //"clean": "rimraf dist"
+    //-------RESPALDO ORIGINAL------
+
+    //-------PRUEBAS PROD UJJUAREZ------
+    "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
+    "start": "cross-env NODE_ENV=producction node src/index.ts", //comando para produccion
+    "postinstall": " npm run build",//despues de instalar todo se ejecuta un comando que queramos
+    "build": "cross-env NODE_ENV=producction webpack",
+    "server:dev": "webpack-dev-server"
+    //"clean": "rimraf dist"
+    //-------PRUEBAS PROD UJJUAREZ------
+
   },
   "keywords": [],
   "author": "",
