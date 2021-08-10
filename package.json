@@ -8,8 +8,7 @@
     "dev": "NODE_ENV=development nodemon src/index.ts",
     "start": "NODE_ENV=producction node src/index.ts",
     "postinstall": "npm run build",
-    "build": "NODE_ENV=producction webpack",
-    "server:dev": "webpack-dev-server"
+    "build": "NODE_ENV=producction"
   },
   "keywords": [],
   "author": "",
