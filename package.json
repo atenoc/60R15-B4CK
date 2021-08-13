@@ -1,8 +1,7 @@
 {
   "name": "gorichelas",
   "version": "1.0.0",
-  "main": "app.js",
-  "type": "module",
+  "main": "app.mjs",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
