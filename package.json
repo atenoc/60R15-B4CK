@@ -2,11 +2,11 @@
   "name": "node-api-images",
   "version": "1.0.0",
   "description": "Aplicacion BackEnd de gorichelas",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "start": "npm run build && node dist/index.js",
+    "start": "npm run build && node dist/index.ts",
     "dev": "nodemon src/index.ts"
   },
   "keywords": [],
