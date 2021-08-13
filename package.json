@@ -1,14 +1,13 @@
 {
   "name": "node-api-images",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Aplicacion BackEnd de gorichelas",
+  "main": "index.ts",
   "scripts": {
-   
-    "dev": "NODE_ENV=development nodemon src/index.ts",
-    "start": "NODE_ENV=production node src/index.ts",
-    "postinstall": "npm run build",
-    "build": "NODE_ENV=producction"
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "start": "npm run build && node dist/index.ts",
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -34,5 +33,13 @@
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
     "uuid": "^8.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atenoc/60R15-B4CK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atenoc/60R15-B4CK/issues"
+  },
+  "homepage": "https://github.com/atenoc/60R15-B4CK#readme"
 }
